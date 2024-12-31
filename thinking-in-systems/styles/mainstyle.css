@@ -1,0 +1,479 @@
+:root {
+    --header-height: 80px;
+    --footer-height: 80px;
+    --lefnav-width: 380px;
+    --aside-width: 0px;
+}
+
+/*----------------------布局排列----------------------*/
+/* Block-START */
+body{
+    margin:0;
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+    grid-template-columns: var(--lefnav-width) auto var(--aside-width);
+    grid-template-rows: var(--header-height) auto var(--footer-height);
+    min-height: 100vh;
+}
+
+header{
+    grid-area: header;
+    padding: 0px;
+    position: sticky;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 10;
+    height: var(--header-height);
+    overflow: hidden;
+}
+
+#sidebar{
+    grid-area: nav;
+    padding: 20px;
+    max-height: calc(100vh - var(--header-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    grid-area: main;
+    padding:40px;
+    max-height: calc(100vh - var(--header-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    
+}
+/* 隐藏滚动条但保留滚动功能 */
+main::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+
+/*aside{
+    grid-area: aside;
+    background-color:rgb(123, 133, 129);
+    padding: 20px;
+    max-height: calc(100vh - var(--header-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}*/
+
+footer{
+    grid-area: footer;
+    padding: 20 0px;
+}
+/* Block-END */
+    
+/* Button-START */
+.btn{
+    display:none;
+    position:fixed;
+    top: 50px;
+    z-index: 1000;
+    padding: 0px;
+    cursor:pointer;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+#btn-navctrl{
+    left: 0;
+}
+/*#btn-asidectrl{
+    right: 0;
+}*/
+/* Button-END */
+
+/*Logo-START*/
+header img{
+    position:absolute;
+    left:0;
+    top:5px;
+    width:280px;
+}
+/*Logo-END*/
+
+
+
+
+
+/*------------------------响应式----------------------*/
+/* SmallSizeAd-START */
+@media screen and (max-width: 1300px){
+    body{
+        grid-template-columns: 1fr 2fr 0;
+    }
+    /*#btn-asidectrl{
+        display: block ;
+    }*/
+}
+@media screen and (max-width: 900px){
+    body{
+        grid-template-columns: 0 auto 0;
+    }
+    main section,div,article {
+        flex-direction: column;
+    }
+    #btn-navctrl{
+        display: block ;
+    }
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+.navopen{
+    display:block;
+    position:fixed;
+    left:0;
+    top:var(--header-height);
+    width:var(--lefnav-width);
+    height:calc(100vh - var(--header-height));
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}    
+/*.asideopen{
+    display:block;
+    position:fixed;
+    right:0;
+    top:var(--header-height);
+    width:var(--aside-width);
+    height:calc(100vh - var(--header-height));
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}*/
+.close{
+    display:none;
+}
+
+ /* SmallSizeAd-END */
+
+
+ /*---------------背景样式--------------*/
+/* 添加渐变背景 */
+body {
+    background: linear-gradient(135deg, #f4f7fb 20%, #e0e7f1); /* 增加渐变背景 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 现代感的字体 */
+    color: #333; /* 深灰色文本，增强可读性 */
+}
+
+/* header 样式优化 */
+header {
+    background-color: #ffffff; /* 白色背景，简洁干净 */
+    border-bottom: 1px solid #e0e0e0; /* 细边框分隔 */
+    justify-content: space-between;
+}
+
+/* 标题整体样式 */
+header h1 {
+    font-size: 2.2rem; /* 标题大小 */
+    font-family: 'Playfair Display', serif; /* 正文字体 */
+    font-weight: 500; /* 正文字体加粗 */
+    color: #1a3e5c; /* 主体文字颜色 */
+    text-align: left; /* 左对齐 */
+    display: flex; /* 使首字母与正文在一行 */
+    align-items: center;
+    margin: 0;
+}
+
+/* 首字母样式 */
+header h1 .fancy-letter {
+    font-family: Vivaldi; /* 手写艺术字体 */
+    font-size: 3.1rem; /* 首字母加大 */
+    font-weight: 520; /* 更醒目 */
+    color: #0055a5;
+    margin-right: 0.2rem; /* 调整首字母与后续文字间距 */
+    display: inline-block;
+}
+
+
+
+/* 导航样式 */
+#sidebar {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0; /* 边框分隔 */
+}
+
+#sidebar h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0055a5;
+    margin-bottom: 15px;
+}
+
+#sidebar a {
+    font-size: 16px;
+    color: #4a4a4a;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+#sidebar a:hover {
+    background-color: #f0f0f0; /* 鼠标悬停背景色 */
+    color: #0055a5; /* 悬停时改变字体颜色 */
+}
+
+#sidebar ol {
+    list-style: none; /* 移除默认的列表样式 */
+    padding-left: 12px; /* 移除可能的默认内边距 */
+    margin: 13px; /* 移除可能的默认外边距 */
+}
+/*导航栏箭头*/
+    summary {
+        display: flex; /* 确保箭头和文字水平排列 */
+        align-items: center; /* 垂直居中 */
+        gap: 4px; /* 增加箭头和文字之间的间距 */
+        cursor: pointer; /* 鼠标指针 */
+    }
+
+    summary::-webkit-details-marker {
+        display: none; /* 隐藏默认箭头 */
+    }
+
+    summary::before {
+        content: "▶"; /* 自定义箭头 */
+        font-size: 14px; /* 根据实际需要调整大小 */
+        color: #333; /* 和页面颜色匹配 */
+        transition: transform 0.3s ease; /* 添加动画效果 */
+        margin-right: 5px;
+    }
+
+    details[open] summary::before {
+        transform: rotate(90deg); /* 展开时箭头旋转 */
+    }
+
+/*导航栏滚动条*/
+/* 设置滚动条宽度和高度 */
+#sidebar::-webkit-scrollbar {
+    width: 3px;  /* 垂直滚动条的宽度 */
+    height: 4px; /* 水平滚动条的高度 */
+}
+
+/* 设置滚动条轨道 */
+#sidebar::-webkit-scrollbar-track {
+    background: transparent;  /* 轨道设置为透明 */
+    border-radius: 2px;  /* 使轨道边角圆滑 */
+}
+
+/* 设置滚动条滑块（细窄的淡色方块） */
+#sidebar::-webkit-scrollbar-thumb {
+    background: #e5e8ec;  /* 淡色方块 */
+    border-radius: 2px;  /* 滑块的圆角 */
+    border: 1px solid #c5c5c5;  /* 给滑块添加边框，使其更清晰 */
+}
+
+/* 滑块悬停时的样式 */
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;  /* 悬停时颜色加深 */
+}
+
+
+
+/* 主内容样式 */
+main {
+    background-color: #ffffff; /* 白色主内容区，提升清晰度 */
+    border-radius: 8px; /* 添加圆角，柔化视觉 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 更显立体 */
+    background: linear-gradient(to bottom, #ffffff, #f9fafc); /* 添加轻微渐变 */
+
+}
+
+    /* 文章段落 */
+    main p {
+        font-size: 16px; /* 增加字体大小，提升可读性 */
+        line-height: 1.8; /* 增加行高，使段落更易读 */
+        margin-bottom: 20px; /* 段落间距 */
+        color: #333; /* 深灰色，减少视觉疲劳 */
+    }
+
+    /* 标题样式 */
+    main h1, main h2, main h3 {
+        font-family: 'Arial', sans-serif; /* 简洁的字体 */
+        font-weight: bold;
+        color: #333; /* 使用深色标题 */
+        margin-top: 20px; /* 增加标题与正文之间的间距 */
+        margin-bottom: 15px;
+    }
+
+    /* 一级标题 */
+    main h1 {
+        font-size: 2.2rem; /* 一级标题较大 */
+        color: #003d73; /* 使用更深的蓝色 */
+        border-bottom: 2px solid #0055a5; /* 标题下方加蓝色横线，增加层次感 */
+        padding-bottom: 5px;
+    }
+
+    /* 二级标题 */
+    main h2 {
+        font-size: 1.8rem;
+        color: #004a90; /* 与整体主色调一致 */
+        margin-top: 25px;
+    }
+
+    /* 三级标题 */
+    main h3 {
+        font-size: 1.6rem;
+        color: #0055a5; /* 加强层次感 */
+        margin-top: 20px;
+    }
+    /* 引言样式 */
+    .phrase{
+        display:block;
+        padding-bottom: 2rem;
+        
+    }
+    .lsize{
+        font-family:Gabriola;
+        font-size: 20px;
+    }
+    /* 文本居中 */
+    .center{
+        text-align: center;
+    }
+    /* 文本右对齐 */
+    .right{
+        text-align: right;
+    }
+    /* 段落居中 */
+    .blkcenter{
+        padding-left:2rem;
+        padding-left: 2rem;
+    }
+    /* 强调文本 */
+    main strong {
+        font-weight: bold;
+        color:  #357abf; /* 使用按钮悬停的蓝色 */
+    }
+
+    /* 斜体文本 */
+    main em {
+        font-style: italic;
+        color: #666; /* 斜体文本颜色稍浅，减少视觉冲突 */
+    }
+
+    /* 列表样式 */
+    main ul, main ol {
+        padding-left: 20px; /* 列表项与正文分开，添加左侧内边距 */
+        margin-bottom: 20px;
+    }
+
+    /* 列表项样式 */
+    main li {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* 链接样式 */
+    main a {
+        color: #0055a5; /* 使用页面主色调 */
+        text-decoration: none;
+        font-weight: normal;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover {
+        color: #003d73; /* 悬停时，链接颜色变深 */
+        text-decoration: underline; /* 悬停时加下划线 */
+    }
+    /*首页字体样式*/
+    .bookird{
+        font-family:Times New Roman, Times, serif;
+        font-weight: 100;
+        color: #373750;
+    }
+    /* 正文插曲样式 */
+    .interlude{
+        display:block;
+        padding: 10px;
+        border-top: 4px solid #161718;
+        border-bottom: 4px solid #161718;
+    }
+    .interlude h2{
+        font-size: 1.3rem;
+        border-bottom: 2px solid #161718; /* 标题下方加蓝色横线，增加层次感 */
+        color: #161718; /* 与整体主色调一致 */
+        margin-top: 20px;
+    }
+/* footer 样式 */
+footer {
+    background-color: #ffffff; /* 与header背景一致 */
+    border-top: 1px solid #e0e0e0; /* 细边框分隔 */
+    color: #666;
+    text-align: center;
+    line-height: var(--footer-height);
+    font-size: 14px; /* 更小的字体提升简洁感 */
+}
+
+/* 按钮样式优化 */
+.btn {
+    background: #f4f7fb; /* 和页面背景相符 */
+    color: #333; /* 深灰色 */
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #357abf; /* 加深颜色 */
+    color: #fff; /* 改为白色文字 */
+    border-color: #357abf;
+}
+
+/* Logo 样式调整 */
+header img {
+    max-height: 70px;
+    margin: 5px 10px;
+    object-fit: contain;
+
+}
+
+/*-------------------动画效果--------------------*/
+/* 链接淡入淡出 */
+@keyframes linkFade {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#sidebar a {
+    animation: linkFade 0.5s ease forwards;
+}
+#sidebar a:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+#sidebar a:nth-child(even) {
+    animation-delay: 0.2s;
+}
