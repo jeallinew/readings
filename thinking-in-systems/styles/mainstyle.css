@@ -304,6 +304,7 @@ main {
         line-height: 1.8; /* 增加行高，使段落更易读 */
         margin-bottom: 20px; /* 段落间距 */
         color: #333; /* 深灰色，减少视觉疲劳 */
+        text-indent:2em;
     }
 
     /* 标题样式 */
@@ -332,7 +333,7 @@ main {
 
     /* 三级标题 */
     main h3 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #0055a5; /* 加强层次感 */
         margin-top: 20px;
     }
@@ -340,29 +341,47 @@ main {
     .phrase{
         display:block;
         padding-bottom: 2rem;
-        
-    }
-    .lsize{
         font-family:Gabriola;
         font-size: 20px;
+        text-indent: 0;
+    }
+    .gabriola{
+        font-family:Gabriola;
+        font-size: 20px;
+        text-indent: 0;
     }
     /* 文本居中 */
     .center{
+        display: block;
         text-align: center;
     }
     /* 文本右对齐 */
     .right{
+        display: block;
         text-align: right;
     }
-    /* 段落居中 */
-    .blkcenter{
-        padding-left:2rem;
-        padding-left: 2rem;
+    /* 段落缩进 */
+    .tab0{
+        display: block;
+        margin-left: 0;
     }
+    .tab2{
+        display: block;
+        margin-left: 2em;
+    }
+    .tab4{
+        display: block;
+        margin-left: 4em;
+    }
+    /* 首行缩进取消 */
+    .linetab0{
+        text-indent: 0;
+    }
+
     /* 强调文本 */
     main strong {
         font-weight: bold;
-        color:  #357abf; /* 使用按钮悬停的蓝色 */
+        color:  #0f243a; /* 使用按钮悬停的蓝色 */
     }
 
     /* 斜体文本 */
@@ -414,6 +433,16 @@ main {
         border-bottom: 2px solid #161718; /* 标题下方加蓝色横线，增加层次感 */
         color: #161718; /* 与整体主色调一致 */
         margin-top: 20px;
+    }
+    .interlude p{
+        font-family:Gabriola;
+        font-size: 20px;
+    }
+    /* 正文补充 */
+    .summary{
+        padding:1.5rem;
+        background-color: aliceblue;
+        text-indent: 0;
     }
 /* footer 样式 */
 footer {
