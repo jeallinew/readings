@@ -297,7 +297,10 @@ main {
     background: linear-gradient(to bottom, #ffffff, #f9fafc); /* 添加轻微渐变 */
 
 }
-
+    /* 图片 */
+    main img{
+        max-width:80vw;
+    }
     /* 文章段落 */
     main p {
         font-size: 16px; /* 增加字体大小，提升可读性 */
@@ -415,6 +418,17 @@ main {
         color: #003d73; /* 悬停时，链接颜色变深 */
         text-decoration: underline; /* 悬停时加下划线 */
     }
+    figure {
+        text-align: center; /* 使题注居中 */
+        margin: 0; /* 去掉默认的边距 */
+    }
+    
+    figcaption {
+        font-size: 14px; /* 设置题注字体大小 */
+        color: #555; /* 设置题注字体颜色 */
+        margin-top: 10px; /* 设置题注与图片之间的间距 */
+    }
+    
     /*首页字体样式*/
     .bookird{
         font-family:Times New Roman, Times, serif;

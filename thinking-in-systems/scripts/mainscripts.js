@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const main = document.querySelector("main");
     const BtnNavctrl = document.querySelector("#btn-navctrl");
     const sidebarLinks = document.querySelectorAll("#sidebar a");
-
     // 更新布局
     function updateLayout() {
         const width = window.innerWidth;
@@ -36,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
             main.style.opacity = 0;
             setTimeout(() => {
                 main.innerHTML = content;
+                // 修正图片路径
+                const imgs = main.querySelectorAll('img');
+                imgs.forEach((img) => {
+                    // 假设图片的路径是相对路径，需要补全为正确的路径
+                    img.src = 'assets/images/' + img.src.split('/').pop();
+                });
                 main.style.opacity = 1;
             }, 300);
         } catch (error) {
@@ -55,6 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (main.getAttribute("data-current-url") === url) return;
             main.setAttribute("data-current-url", url);
             loadContent(url);
+            // 点击后隐藏侧边栏
+            if (window.innerWidth <= 900) {
+                setTimeout(() => {
+                    // 等待页面加载完成，模拟点击按钮隐藏侧边栏
+                    BtnNavctrl.click();
+                }, 300); // 延迟 1 秒（1000 毫秒）后执行
+            }
         });
     });
 });
