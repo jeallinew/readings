@@ -340,6 +340,14 @@ main {
         color: #0055a5; /* 加强层次感 */
         margin-top: 20px;
     }
+    /* 四级标题 */
+    main h4 {
+        font-size: 1.2rem;
+        color: #0055a5; /* 加强层次感 */
+        margin-top: 15px;
+        text-align: center;
+    }
+
     /* 引言样式 */
     .phrase{
         display:block;
