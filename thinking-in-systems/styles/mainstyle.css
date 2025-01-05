@@ -303,7 +303,7 @@ main {
     }
     /* 文章段落 */
     main p {
-        font-size: 16px; /* 增加字体大小，提升可读性 */
+        font-size: 17px; /* 增加字体大小，提升可读性 */
         line-height: 1.8; /* 增加行高，使段落更易读 */
         margin-bottom: 20px; /* 段落间距 */
         color: #333; /* 深灰色，减少视觉疲劳 */
@@ -332,6 +332,7 @@ main {
         font-size: 1.8rem;
         color: #004a90; /* 与整体主色调一致 */
         margin-top: 25px;
+        text-align: center;
     }
 
     /* 三级标题 */
@@ -406,13 +407,16 @@ main {
     main ul, main ol {
         padding-left: 20px; /* 列表项与正文分开，添加左侧内边距 */
         margin-bottom: 20px;
+        list-style-type:disc;
+        margin-left: 4em;
     }
 
     /* 列表项样式 */
     main li {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.6;
         color: #333;
+        padding-bottom: 10px;
     }
 
     /* 链接样式 */
@@ -443,6 +447,7 @@ main {
         font-family:Times New Roman, Times, serif;
         font-weight: 100;
         color: #373750;
+        text-align: left;
     }
     /* 正文插曲样式 */
     .interlude{
@@ -451,7 +456,7 @@ main {
         border-top: 4px solid #161718;
         border-bottom: 4px solid #161718;
     }
-    .interlude h2{
+    .interlude h3{
         font-size: 1.3rem;
         border-bottom: 2px solid #161718; /* 标题下方加蓝色横线，增加层次感 */
         color: #161718; /* 与整体主色调一致 */
@@ -459,7 +464,7 @@ main {
     }
     .interlude p{
         font-family:Gabriola;
-        font-size: 20px;
+        font-size: 22px;
     }
     /* 正文补充 */
     .summary{
