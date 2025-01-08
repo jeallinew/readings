@@ -419,6 +419,12 @@ main {
         padding-bottom: 10px;
     }
 
+    /* quote样式 */
+    .quote{
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+
     /* 链接样式 */
     main a {
         color: #0055a5; /* 使用页面主色调 */
