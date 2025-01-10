@@ -419,6 +419,22 @@ main {
         padding-bottom: 10px;
     }
 
+    /* 表格样式 */
+    table{
+        margin: 1em;
+        border-collapse: collapse;
+        background-color: #d3d3d3; 
+    }
+    tr{
+        border: 1px solid #000;
+    }
+    td, th {
+        padding:1em;
+    }
+    td.gabriola{
+        padding-left: 6em;
+    }
+
     /* quote样式 */
     .quote{
         padding-left: 4em;
