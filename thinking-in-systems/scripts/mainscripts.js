@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const main = document.querySelector("main");
     const BtnNavctrl = document.querySelector("#btn-navctrl");
     const sidebarLinks = document.querySelectorAll("#sidebar a");
+    const abbr=document.querySelectorAll("abbr");
     // 更新布局
     function updateLayout() {
         const width = window.innerWidth;
@@ -107,4 +108,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // 处理点击事件
+    abbr.addEventListener('click', (event) => {
+        const target = event.target;
+        const term = target.textContent.toLowerCase();
+        const definition = terms[term];
+        tooltip.textContent = definition;
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${event.pageX + 5}px`;
+        tooltip.style.top = `${event.pageY + 5}px`;
+    });
+
 });
