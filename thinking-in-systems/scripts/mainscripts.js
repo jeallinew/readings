@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const main = document.querySelector("main");
     const BtnNavctrl = document.querySelector("#btn-navctrl");
     const sidebarLinks = document.querySelectorAll("#sidebar a");
-    const abbrElements = document.querySelectorAll("abbr");
     // 更新布局
     function updateLayout() {
         const width = window.innerWidth;
@@ -109,31 +108,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 为每个 <abbr> 元素添加点击事件监听器
-    abbrElements.forEach((abbr) => {
-        abbr.addEventListener('touchstart', (event) => {
-            const term = abbr.textContent.toLowerCase();
-            const definition = terms[term];
-            if (definition) {
-                // 创建并显示工具提示
-                const tooltip = document.createElement('div');
-                tooltip.textContent = definition;
-                tooltip.style.position = 'absolute';
-                tooltip.style.left = `${event.pageX + 5}px`;
-                tooltip.style.top = `${event.pageY + 5}px`;
-                tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-                tooltip.style.color = 'white';
-                tooltip.style.padding = '5px';
-                tooltip.style.borderRadius = '3px';
-                tooltip.style.zIndex = '1000';
-                document.body.appendChild(tooltip);
-
-                // 在 3 秒后移除工具提示
-                setTimeout(() => {
-                    tooltip.remove();
-                }, 3000);
-            }
-        });
-    });
 
 });
