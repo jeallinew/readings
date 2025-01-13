@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
                 main.style.opacity = 1;
                 // 调用 definitions.js 中的替换逻辑
-                if (typeof highlightTerms === 'function') {
-                    highlightTerms();
+                if (typeof highlightTrems === 'function') {
+                    highlightTrems();
                 }
             }, 300);
         } catch (error) {
