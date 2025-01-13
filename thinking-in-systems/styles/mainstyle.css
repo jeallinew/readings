@@ -495,6 +495,9 @@ main {
         text-indent: 0;
     }
 
+    abbr{
+        color: #0055a5;
+    }
     abbr[title] {
         text-decoration: underline dotted;
         cursor: help;

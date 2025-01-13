@@ -27,10 +27,11 @@ function highlightTrems(){
 
     };
 
+    const content = document.querySelectorAll("article p, article li");
     content.forEach((element) => {
         if (!element.querySelector('abbr')) {  // 确保该元素内没有abbr标签
             element.innerHTML = element.innerHTML.replace(
-                new RegExp(`\\b(${Object.keys(terms).join("|")})\\b`, "gi"),
+                new RegExp(`(${Object.keys(terms).join("|")})`, "gi"),
                 match => `<abbr title="${terms[match]}">${match}</abbr>`
             );
         }
