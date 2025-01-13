@@ -5,6 +5,11 @@
     --aside-width: 0px;
 }
 
+@font-face {
+    font-family: 'Gabriola';
+    src: url('font/Gabriola.ttf') format('truetype');
+}
+
 /*----------------------布局排列----------------------*/
 /* Block-START */
 body{
