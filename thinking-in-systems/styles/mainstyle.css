@@ -10,6 +10,10 @@
     src: url('font/Gabriola.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Vivaldi';
+    src: url('font/VIVALDII.TTF') format('truetype');
+}
 /*----------------------布局排列----------------------*/
 /* Block-START */
 body{
@@ -186,7 +190,7 @@ header {
 
 /* 标题整体样式 */
 header h1 {
-    font-size: 2.2rem; /* 标题大小 */
+    font-size: 1.8rem; /* 标题大小 */
     font-family: 'Playfair Display', serif; /* 正文字体 */
     font-weight: 500; /* 正文字体加粗 */
     color: #1a3e5c; /* 主体文字颜色 */
@@ -199,7 +203,7 @@ header h1 {
 /* 首字母样式 */
 header h1 .fancy-letter {
     font-family: Vivaldi; /* 手写艺术字体 */
-    font-size: 3.1rem; /* 首字母加大 */
+    font-size: 2.6rem; /* 首字母加大 */
     font-weight: 520; /* 更醒目 */
     color: #0055a5;
     margin-right: 0.2rem; /* 调整首字母与后续文字间距 */
@@ -312,7 +316,7 @@ main {
         line-height: 1.8; /* 增加行高，使段落更易读 */
         margin-bottom: 20px; /* 段落间距 */
         color: #333; /* 深灰色，减少视觉疲劳 */
-        text-indent:2em;
+        text-indent:1em;
     }
 
     /* 标题样式 */
@@ -326,7 +330,7 @@ main {
 
     /* 一级标题 */
     main h1 {
-        font-size: 2.2rem; /* 一级标题较大 */
+        font-size: 1.5rem; /* 一级标题较大 */
         color: #003d73; /* 使用更深的蓝色 */
         border-bottom: 2px solid #0055a5; /* 标题下方加蓝色横线，增加层次感 */
         padding-bottom: 5px;
@@ -334,7 +338,7 @@ main {
 
     /* 二级标题 */
     main h2 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         color: #004a90; /* 与整体主色调一致 */
         margin-top: 25px;
         text-align: center;
@@ -342,13 +346,13 @@ main {
 
     /* 三级标题 */
     main h3 {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         color: #0055a5; /* 加强层次感 */
         margin-top: 20px;
     }
     /* 四级标题 */
     main h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #0055a5; /* 加强层次感 */
         margin-top: 15px;
         text-align: center;
@@ -383,11 +387,11 @@ main {
     }
     .tab2{
         display: block;
-        margin-left: 2em;
+        margin-left: 1em;
     }
     .tab4{
         display: block;
-        margin-left: 4em;
+        margin-left: 2em;
     }
     /* 首行缩进取消 */
     .linetab0{
@@ -483,7 +487,7 @@ main {
         border-bottom: 4px solid #161718;
     }
     .interlude h3{
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         border-bottom: 2px solid #161718; /* 标题下方加蓝色横线，增加层次感 */
         color: #161718; /* 与整体主色调一致 */
         margin-top: 20px;
