@@ -42,6 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     img.src = 'assets/images/' + img.src.split('/').pop();
                 });
                 main.style.opacity = 1;
+                // 调用 definitions.js 中的替换逻辑
+                if (typeof highlightTerms === 'function') {
+                    highlightTerms();
+                }
             }, 300);
         } catch (error) {
             console.error("Error loading content:", error);

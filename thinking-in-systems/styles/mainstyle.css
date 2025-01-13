@@ -494,6 +494,17 @@ main {
         background-color: aliceblue;
         text-indent: 0;
     }
+
+    abbr[title] {
+        text-decoration: underline dotted;
+        cursor: help;
+    }
+    
+    abbr[title]:hover {
+        background-color: #f0f0f0; /* 可选: 给提示区域添加背景色 */
+        border-radius: 4px;
+    }
+
 /* footer 样式 */
 footer {
     background-color: #ffffff; /* 与header背景一致 */
