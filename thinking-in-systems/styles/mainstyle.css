@@ -1,5 +1,5 @@
 :root {
-    --header-height: 80px;
+    --header-height: 60px;
     --footer-height: 80px;
     --lefnav-width: 380px;
     --aside-width: 0px;
@@ -91,7 +91,7 @@ footer{
 .btn{
     display:none;
     position:fixed;
-    top: 50px;
+    top:10px;
     z-index: 1000;
     padding: 0px;
     cursor:pointer;
@@ -105,6 +105,11 @@ footer{
 /*#btn-asidectrl{
     right: 0;
 }*/
+#next{
+    position:fixed;
+    right:0;
+    top:40px;
+}
 /* Button-END */
 
 /*Logo-START*/
@@ -139,6 +144,9 @@ header img{
     }
     #btn-navctrl{
         display: block ;
+    }
+    #title{
+        margin-left: 40px;
     }
 }
 @keyframes fadeIn {
@@ -209,7 +217,6 @@ header h1 .fancy-letter {
     margin-right: 0.2rem; /* 调整首字母与后续文字间距 */
     display: inline-block;
 }
-
 
 
 /* 导航样式 */
@@ -538,16 +545,14 @@ footer {
 
 /* 按钮样式优化 */
 .btn {
-    background: #f4f7fb; /* 和页面背景相符 */
+    background: none; /* 和页面背景相符 */
     color: #333; /* 深灰色 */
-    border: 2px solid #ddd;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
     width: 40px;
     height: 40px;
     text-align: center;
     line-height: 36px;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -557,6 +562,18 @@ footer {
     color: #fff; /* 改为白色文字 */
     border-color: #357abf;
 }
+
+#next{
+    background: none;
+    border: none;
+    color: #4f5050;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#next:hover{
+    color: #003d73;
+}
+
 
 /* Logo 样式调整 */
 header img {

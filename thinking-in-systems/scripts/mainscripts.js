@@ -14,6 +14,83 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebar.classList.add("close");
         }
     }
+    
+    //章节
+    const chapters = [
+        `pages/introduction.html`,
+        `pages/a-note-from-the-author.html`,
+        `pages/a-note-from-the-editor.html`,
+        `pages/introduction-the-system-lens.html`,
+        `pages/the-basics.html`,
+        `pages/more-than-the-sum-of-its-parts.html`,
+        `pages/look-beyond-the-players-to-the-rules-of-the-game.html`,
+        `pages/bathtubs-101—understanding-system-behavior-over-time.html`,
+        `pages/how-the-system-runs-itself—feedback.html`,
+        `pages/stabilizing-loops—balancing-feedback.html`,
+        `pages/runaway-loops—reinforcing-feedback.html`,
+        `pages/a-brief-visit-to-the-systems-zoo.html`,
+        `pages/one-stock-systems.html`,
+        `pages/two-stock-systems.html`,
+        `pages/why-systems-work-so-well.html`,
+        `pages/resilience.html`,
+        `pages/self-organization.html`,
+        `pages/hierarchy.html`,
+        `pages/why-systems-surprise-us.html`,
+        `pages/beguiling-events.html`,
+        `pages/linear-minds-in-a-nonlinear-world.html`,
+        `pages/nonexistent-boundaries.html`,
+        `pages/layers-of-limits.html`,
+        `pages/ubiquitous-delays.html`,
+        `pages/bounded-rationality.html`,
+        `pages/system-traps-and-opportunities.html`,
+        `pages/policy-resistance—fixes-that-fail.html`,
+        `pages/the-tragedy-of-the-commons.html`,
+        `pages/drift-to-low-performance.html`,
+        `pages/escalation.html`,
+        `pages/success-to-the-successful—competitive-exclusion.html`,
+        `pages/shifting-the-burden-to-the-intervenor—addiction.html`,
+        `pages/rule-beating.html`,
+        `pages/seeking-the-wrong-goal.html`,
+        `pages/leverage-points—places-to-intervene-in-a-system.html`,
+        `pages/numbers.html`,
+        `pages/buffers.html`,
+        `pages/stock-and-flow-structures.html`,
+        `pages/delays.html`,
+        `pages/balancing-feedback-loop.html`,
+        `pages/reinforcing-feedback-loops.html`,
+        `pages/information-flows.html`,
+        `pages/rules.html`,
+        `pages/self-organization-.html`,
+        `pages/goals.html`,
+        `pages/paradigms.html`,
+        `pages/transcending-paradigms.html`,
+        `pages/living-in-a-world-of-systems.html`,
+        `pages/get-the-beat-of-the-system.html`,
+        `pages/expose-your-mental-models-to-the-light-of-day.html`,
+        `pages/honor-respect-and-distribute-information.html`,
+        `pages/use-language-with-care-and-enrich-it-with-systems-concepts.html`,
+        `pages/pay-attention-to-what-is-important-not-just-what-is-quantifiable.html`,
+        `pages/make-feedback-policies-for-feedback-systems.html`,
+        `pages/go-for-the-good-of-the-whole.html`,
+        `pages/listen-to-the-wisdom-of-the-system.html`,
+        `pages/locate-responsibility-in-the-system.html`,
+        `pages/stay-humble—stay-a-learner.html`,
+        `pages/celebrate-complexity.html`,
+        `pages/expand-time-horizons.html`,
+        `pages/defy-the-disciplines.html`,
+        `pages/expand-the-boundary-of-caring.html`,
+        `pages/don't-erode-the-goal-of-goodness.html`,
+        `pages/system-definitions-a-glossary.html`,
+        `pages/summary-of-systems-principles.html`,
+        `pages/springing-the-system-traps.html`,
+        `pages/places-to-intervene-in-a-system.html`,
+        `pages/guidelines-for-living-in-a-world-of-systems.html`,
+        `pages/model-equations.html`,
+        `pages/bibliography-of-systems-resources.html`,
+        `pages/editor's-acknowledgments.html`
+    ];
+    let currentChapterUrl = `pages/introduction.html`; // 全局变量存储当前章节URL
+
     //名词定义
     function highlightTrems(){
         const terms = {
@@ -97,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const url = link.getAttribute("href");
             if (main.getAttribute("data-current-url") === url) return;
             main.setAttribute("data-current-url", url);
+            currentChapterUrl = url;  // 更新全局变量
             loadContent(url);
             // 点击后隐藏侧边栏
             if (window.innerWidth <= 900) {
@@ -108,5 +186,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
+    //下一页交互
+    const nextBTN=document.querySelector("#next");
+    nextBTN.addEventListener("click",function(){
+        const currentIndex = chapters.indexOf(currentChapterUrl);
+        if (currentIndex < chapters.length - 1) {
+            loadContent(chapters[currentIndex + 1]);
+            currentChapterUrl = chapters[currentIndex + 1];  // 更新全局变量
+        }
+    });
 });
