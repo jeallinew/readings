@@ -385,6 +385,7 @@ main {
     .gabriola{
         font-family:Gabriola;
         text-indent: 0;
+        font-size: 20px;
     }
     /* 文本居中 */
     .center{
@@ -444,10 +445,14 @@ main {
     }
 
     /* 表格样式 */
-    
-    table{
+    .table{
+        overflow-x: auto;
         margin-left: 2em;
         margin-right: 2em;
+    }
+
+    table{
+
         border-collapse: collapse;
         background-color: #d3d3d3; 
         overflow-x: auto;
