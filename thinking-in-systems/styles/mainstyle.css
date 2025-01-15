@@ -416,7 +416,7 @@ main {
         padding-left: 20px; /* 列表项与正文分开，添加左侧内边距 */
         margin-bottom: 20px;
         list-style-type:disc;
-        margin-left: 4em;
+        margin-left: 2em;
     }
 
     /* 列表项样式 */
@@ -429,7 +429,8 @@ main {
 
     /* 表格样式 */
     table{
-        margin: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
         border-collapse: collapse;
         background-color: #d3d3d3; 
     }
@@ -496,6 +497,14 @@ main {
         font-family:Gabriola;
         font-size: 22px;
     }
+
+    /* tip */
+    .tip{
+        text-indent: 0;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+
     /* 正文补充 */
     .summary{
         padding:1.5rem;

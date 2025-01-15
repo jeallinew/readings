@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
         content.forEach((element) => {
             if (!element.querySelector('abbr')) {  // 确保该元素内没有abbr标签
                 element.innerHTML = element.innerHTML.replace(
-                    new RegExp(`(${Object.keys(terms).join("|")})`, "gi"),
-                    match => `<abbr title="${terms[match.toLowerCase()]}">${match}</abbr>`
+                    new RegExp(`(^|\\W)(${Object.keys(terms).join("|")})`, "gi"),
+                    (match,p1,p2) => `${p1}<abbr title="${terms[p2.toLowerCase()]}">${p2}</abbr>`
                 );
             }
          });
