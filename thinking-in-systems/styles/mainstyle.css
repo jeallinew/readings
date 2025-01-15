@@ -444,12 +444,15 @@ main {
     }
 
     /* 表格样式 */
+    
     table{
         margin-left: 2em;
         margin-right: 2em;
         border-collapse: collapse;
         background-color: #d3d3d3; 
         overflow-x: auto;
+        width: 95%;
+        border-collapse: collapse;
     }
     tr{
         border: 1px solid #000;
