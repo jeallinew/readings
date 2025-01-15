@@ -447,8 +447,6 @@ main {
     /* 表格样式 */
     .table{
         overflow-x: auto;
-        margin-left: 2em;
-        margin-right: 2em;
     }
 
     table{
