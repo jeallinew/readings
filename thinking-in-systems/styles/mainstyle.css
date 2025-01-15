@@ -433,6 +433,7 @@ main {
         margin-right: 2em;
         border-collapse: collapse;
         background-color: #d3d3d3; 
+        overflow-x: auto;
     }
     tr{
         border: 1px solid #000;
