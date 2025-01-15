@@ -553,7 +553,7 @@ footer {
 }
 
 /* 按钮样式优化 */
-.btn {
+.btn,.btn:active {
     background: none; /* 和页面背景相符 */
     color: #333; /* 深灰色 */
     border: none;
@@ -572,7 +572,7 @@ footer {
     border-color: #357abf;
 }
 
-#prev,#next{
+#prev,#next,#prev:active,#next:active{
     background: none;
     border: none;
     color: #4f5050;
