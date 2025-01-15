@@ -164,8 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // 默认加载 "Introduction"
-    loadContent(currentChapterUrl);
 
     // 拦截侧边栏链接点击事件
     sidebarLinks.forEach(link => {
@@ -195,4 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentChapterUrl = chapters[currentIndex + 1];  // 更新全局变量
         }
     });
+
+    // 默认加载 "Introduction"
+    loadContent(currentChapterUrl);
 });
