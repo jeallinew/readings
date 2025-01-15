@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 默认加载 "Introduction"
-    loadContent("pages/introduction.html");
+    loadContent(currentChapterUrl);
 
     // 拦截侧边栏链接点击事件
     sidebarLinks.forEach(link => {
