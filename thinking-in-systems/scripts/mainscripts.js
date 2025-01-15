@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `pages/bibliography-of-systems-resources.html`,
         `pages/editor's-acknowledgments.html`
     ];
-    let currentChapterUrl = `pages/introduction.html`; // 全局变量存储当前章节URL
+    let currentChapterUrl = sessionStorage.getItem('currentChapterUrl') || `pages/introduction.html`; 
 
     //名词定义
     function highlightTrems(){
@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (main.getAttribute("data-current-url") === url) return;
             main.setAttribute("data-current-url", url);
             currentChapterUrl = url;  // 更新全局变量
+            sessionStorage.setItem('currentChapterUrl', url);  // 更新 sessionStorage
             loadContent(url);
             // 点击后隐藏侧边栏
             if (window.innerWidth <= 900) {
@@ -184,6 +185,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    //上一页交互
+    const prevBTN=document.querySelector("#prev");
+    prevBTN.addEventListener("click",function(){
+        const currentIndex = chapters.indexOf(currentChapterUrl);
+        if (currentIndex > 0) {
+            loadContent(chapters[currentIndex - 1]);
+            currentChapterUrl = chapters[currentIndex - 1];  // 更新全局变量
+            sessionStorage.setItem('currentChapterUrl', currentChapterUrl);  // 更新 sessionStorage
+        }
+    });
+
     //下一页交互
     const nextBTN=document.querySelector("#next");
     nextBTN.addEventListener("click",function(){
@@ -191,6 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentIndex < chapters.length - 1) {
             loadContent(chapters[currentIndex + 1]);
             currentChapterUrl = chapters[currentIndex + 1];  // 更新全局变量
+            sessionStorage.setItem('currentChapterUrl', currentChapterUrl);  // 更新 sessionStorage
         }
     });
 

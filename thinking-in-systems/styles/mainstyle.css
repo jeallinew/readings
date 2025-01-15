@@ -105,6 +105,12 @@ footer{
 /*#btn-asidectrl{
     right: 0;
 }*/
+#prev{
+    position:fixed;
+    right:0;
+    top:10px;
+}
+
 #next{
     position:fixed;
     right:0;
@@ -147,6 +153,9 @@ header img{
     }
     #title{
         margin-left: 40px;
+        font-weight: 300;
+        letter-spacing: -0.12rem;
+        font-size: 1.6rem;
     }
 }
 @keyframes fadeIn {
@@ -211,7 +220,7 @@ header h1 {
 /* 首字母样式 */
 header h1 .fancy-letter {
     font-family: Vivaldi; /* 手写艺术字体 */
-    font-size: 2.6rem; /* 首字母加大 */
+    font-size: 2.4rem; /* 首字母加大 */
     font-weight: 520; /* 更醒目 */
     color: #0055a5;
     margin-right: 0.2rem; /* 调整首字母与后续文字间距 */
@@ -563,25 +572,20 @@ footer {
     border-color: #357abf;
 }
 
-#next{
+#prev,#next{
     background: none;
     border: none;
     color: #4f5050;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
 }
-#next:hover{
+#next:hover,#prev:hover{
     color: #003d73;
 }
 
 
-/* Logo 样式调整 */
-header img {
-    max-height: 70px;
-    margin: 5px 10px;
-    object-fit: contain;
 
-}
 
 /*-------------------动画效果--------------------*/
 /* 链接淡入淡出 */
